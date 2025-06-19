@@ -45,7 +45,7 @@ export default function Hero() {
                 dark:bg-transparent dark:bg-none dark:from-transparent dark:to-transparent"
         >
             <h1 className="text-5xl font-extrabold mb-4 text-black dark:text-white">
-                Hi, I'm Allen Baby
+                Hi, I&apos;m Allen Baby
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-xl dark:text-white">
                 I build fast, beautiful web experiences with code and creativity.

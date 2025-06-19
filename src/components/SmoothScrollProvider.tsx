@@ -4,7 +4,6 @@
 import { useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import ScrollSmoother from 'gsap/ScrollSmoother';
-import ScrollProgress from './ScrollProgress';
 
 gsap.registerPlugin(ScrollSmoother);
 

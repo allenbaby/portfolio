@@ -2,7 +2,7 @@
 
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from '@/utils/gsap'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 
 const socials = [

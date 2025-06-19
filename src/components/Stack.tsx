@@ -46,8 +46,6 @@ const techStacks = [{
 }
 ];
 
-const techStacksArray = [techStacks]
-
 export default function TechStack() {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const itemRefs = useRef<HTMLDivElement[]>([]);
@@ -85,7 +83,7 @@ export default function TechStack() {
         <div>
             <h3 className="text-4xl font-extrabold text-gray-300 mb-6">{label}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-                {stack.map((skill, i) => (
+                {stack.map((skill) => (
                     <div
                         key={skill.name}
                         ref={(el: HTMLDivElement | null) => {
@@ -104,7 +102,7 @@ export default function TechStack() {
     return (
         <section ref={sectionRef} className="min-h-screen py-20 px-6 bg-transparent">
             <div className="max-w-6xl mx-auto space-y-20">
-                {techStacks.map((stack, i) => renderTechSection(stack.label, stack.data))}
+                {techStacks.map((stack) => renderTechSection(stack.label, stack.data))}
             </div>
         </section>
     );
