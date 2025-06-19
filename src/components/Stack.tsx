@@ -79,13 +79,17 @@ export default function TechStack() {
         });
     }, []);
 
-    const renderTechSection = (label: string, stack: { name: string; icon: string }[]) => (
-        <div>
+    const renderTechSection = (
+        label: string,
+        data: { name: string; icon: string }[],
+        key: string
+    ) => (
+        <div key={key}>
             <h3 className="text-4xl font-extrabold text-gray-300 mb-6">{label}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-                {stack.map((skill) => (
+                {data.map((skill, i) => (
                     <div
-                        key={skill.name}
+                        key={`${skill.name}-${i}`}
                         ref={(el: HTMLDivElement | null) => {
                             if (el) itemRefs.current.push(el);
                         }}
@@ -99,10 +103,11 @@ export default function TechStack() {
         </div>
     );
 
+
     return (
         <section ref={sectionRef} className="min-h-screen py-20 px-6 bg-transparent">
             <div className="max-w-6xl mx-auto space-y-20">
-                {techStacks.map((stack) => renderTechSection(stack.label, stack.data))}
+                {techStacks.map((stack) => renderTechSection(stack.label, stack.data, stack.label))}
             </div>
         </section>
     );
