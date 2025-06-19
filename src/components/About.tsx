@@ -33,8 +33,10 @@ export default function About() {
             <div className="max-w-2xl text-center">
                 <h2 className="text-3xl font-bold mb-4 text-black dark:text-white">About Me</h2>
                 <p className="text-lg text-gray-600 dark:text-white">
-                    I’m a Software Developer who has more than 4 years in writing well maintained code.
-                    I am currently doing my Masters in Computer Science.
+                    I’m a Software Engineer with 3+ years of Industry experience building scalable web applications and AI-driven interfaces.
+                    Expertise in JavaScript, React.js, Node.js, Next.js, Python, and cloud-based solutions. Proven track record of
+                    reducing load times and improving deployment pipelines. Seeking SDE roles in agile environments focused on
+                    performance and innovation.
                 </p>
             </div>
         </section>
