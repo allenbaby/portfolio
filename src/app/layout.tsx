@@ -12,6 +12,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Allen Baby Portfolio',
   description: 'GSAP + Tailwind + Dark Mode Portfolio',
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+    ],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

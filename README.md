@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧑‍💻 Personal Developer Portfolio
 
-## Getting Started
+This is my personal developer portfolio website, built with **Next.js 15**, **Tailwind CSS**, and **GSAP animations**. It showcases my projects, technical stack, and development experience in a sleek, performant interface that I personally love. 
+The smooth scrolling is so satisfying xD.
 
-First, run the development server:
+![Screenshot](./public/preview.png)
+
+---
+
+## 🚀 Features
+
+- ✨ Built with **Next.js 15**
+- 🎨 Styled using **Tailwind CSS**
+- 📦 Animations via **GSAP** and **ScrollTrigger**
+- ⚙️ Fully responsive and mobile-friendly
+- 💡 Modular, reusable components
+- 🧠 SEO-friendly metadata with dynamic `<head>` management
+- 📁 File-based routing and layout system
+- 🌐 Hosted on [Vercel](https://vercel.com/)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **Animation**: GSAP
+- **Icons**: React Icons / Custom SVGs
+- **Type Checking**: TypeScript
+- **Deployment**: Vercel
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── public/                  # Static assets (favicon, images, etc.)
+├── src/
+│   ├── app/                 # App Router pages and layouts
+│   ├── components/          # Reusable UI components
+│   ├── context/             # Context providers
+│   └── utils/               # Utility functions and constants
+├── .gitignore
+├── README.md
+├── package.json
+├── package-lock.json
+├── tailwind.config.ts
+├── tsconfig.json
+├── next.config.ts
+├── postcss.config.mjs
+└── eslint.config.mjs
+```
+
+---
+
+## 🖥️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/allenbaby/portfolio
+cd portfolio
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run in development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4. Build for production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The project is deployed using [**Vercel**](https://vercel.com/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙋‍♀️ Author
+
+Built with ❤️ by [Allen Baby](https://www.linkedin.com/in/allenbaby/) 
