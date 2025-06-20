@@ -13,9 +13,7 @@ export const metadata: Metadata = {
   title: 'Allen Baby Portfolio',
   description: 'GSAP + Tailwind + Dark Mode Portfolio',
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-    ],
+    icon: "/portfolio.png",
   },
 }
 
