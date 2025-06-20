@@ -90,11 +90,6 @@ The project is deployed using [**Vercel**](https://vercel.com/).
 
 ---
 
-
----
-
----
-
 ## 🙋‍♀️ Author
 
 Built with ❤️ by [Allen Baby](https://www.linkedin.com/in/allenbaby/) 
