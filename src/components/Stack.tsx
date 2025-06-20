@@ -8,40 +8,40 @@ import Image from 'next/image';
 const techStacks = [{
     label: 'Frontend',
     data: [
-        { name: 'JavaScript', icon: '/svg/javascript.svg' },
-        { name: 'TypeScript', icon: '/svg/typescript.svg' },
-        { name: 'React', icon: '/svg/react.svg' },
-        { name: 'Next.js', icon: '/svg/nextjs.jpeg' },
-        { name: 'Redux', icon: '/svg/redux.svg' },
-        { name: 'Tailwind CSS', icon: '/svg/wind.svg' },
-        { name: 'GSAP', icon: '/svg/gsap.gif' },
-        { name: 'Framer Motion', icon: '/svg/framer.png' },
-        { name: 'SASS', icon: '/svg/Sass.svg' },
-        { name: 'Bootstrap', icon: '/svg/bootstrap.svg' },
+        { name: 'JavaScript', icon: '/stack/javascript.svg' },
+        { name: 'TypeScript', icon: '/stack/typescript.svg' },
+        { name: 'React', icon: '/stack/react.svg' },
+        { name: 'Next.js', icon: '/stack/nextjs.jpeg' },
+        { name: 'Redux', icon: '/stack/redux.svg' },
+        { name: 'Tailwind CSS', icon: '/stack/wind.svg' },
+        { name: 'GSAP', icon: '/stack/gsap.gif' },
+        { name: 'Framer Motion', icon: '/stack/framer.png' },
+        { name: 'SASS', icon: '/stack/sass.svg' },
+        { name: 'Bootstrap', icon: '/stack/bootstrap.svg' },
     ]
 },
 {
     label: 'Backend',
     data: [
-        { name: 'Node.js', icon: '/svg/nodejs.svg' },
-        { name: 'Express.js', icon: '/svg/expressjs.svg' },
+        { name: 'Node.js', icon: '/stack/nodejs.svg' },
+        { name: 'Express.js', icon: '/stack/expressjs.svg' },
     ]
 },
 {
     label: 'Database',
     data: [
-        { name: 'MySQL', icon: '/svg/mysql.svg' },
-        { name: 'PostgreSQL', icon: '/svg/PostgresSQL.svg' },
-        { name: 'MongoDB', icon: '/svg/mongodb.svg' },
-        { name: 'Prisma', icon: '/svg/prisma.png' },
+        { name: 'MySQL', icon: '/stack/mysql.svg' },
+        { name: 'PostgreSQL', icon: '/stack/postgressql.svg' },
+        { name: 'MongoDB', icon: '/stack/mongodb.svg' },
+        { name: 'Prisma', icon: '/stack/prisma.png' },
     ]
 },
 {
     label: 'Tools',
     data: [
-        { name: 'Git', icon: '/svg/Git.svg' },
-        { name: 'Docker', icon: '/svg/docker.svg' },
-        { name: 'AWS', icon: '/svg/AWS.png' },
+        { name: 'Git', icon: '/stack/Git.svg' },
+        { name: 'Docker', icon: '/stack/docker.svg' },
+        { name: 'AWS', icon: '/stack/AWS.png' },
     ]
 }
 ];
