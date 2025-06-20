@@ -39,9 +39,9 @@ const techStacks = [{
 {
     label: 'Tools',
     data: [
-        { name: 'Git', icon: '/stack/Git.svg' },
+        { name: 'Git', icon: '/stack/git.svg' },
         { name: 'Docker', icon: '/stack/docker.svg' },
-        { name: 'AWS', icon: '/stack/AWS.png' },
+        { name: 'AWS', icon: '/stack/aws.png' },
     ]
 }
 ];
