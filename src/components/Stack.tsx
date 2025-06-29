@@ -85,7 +85,7 @@ export default function TechStack() {
         key: string
     ) => (
         <div key={key}>
-            <h3 className="text-4xl font-extrabold text-gray-300 mb-6">{label}</h3>
+            <h3 className="text-4xl font-extrabold text-black dark:text-gray-300 mb-6">{label}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
                 {data.map((skill, i) => (
                     <div
@@ -93,10 +93,11 @@ export default function TechStack() {
                         ref={(el: HTMLDivElement | null) => {
                             if (el) itemRefs.current.push(el);
                         }}
-                        className="flex items-center space-x-4 bg-white/10 backdrop-blur p-4 rounded-lg shadow dark:bg-black/40 opacity-0 translate-y-8"
+                        className="flex items-center space-x-4 text-black bg-white/50 backdrop-blur p-4 rounded-lg shadow 
+                        dark:bg-black/40 dark:text-white opacity-0 translate-y-8"
                     >
                         <Image src={skill.icon} alt={skill.name} width={32} height={32} />
-                        <span className="text-lg text-white font-medium">{skill.name}</span>
+                        <span className="text-lg font-medium">{skill.name}</span>
                     </div>
                 ))}
             </div>
@@ -105,7 +106,9 @@ export default function TechStack() {
 
 
     return (
-        <section ref={sectionRef} className="min-h-screen py-20 px-6 bg-transparent">
+        <section ref={sectionRef} className="min-h-screen py-20 px-6 
+            bg-gradient-to-b from-blue-100 to-white 
+            dark:bg-transparent dark:from-transparent dark:to-transparent">
             <div className="max-w-6xl mx-auto space-y-20">
                 {techStacks.map((stack) => renderTechSection(stack.label, stack.data, stack.label))}
             </div>

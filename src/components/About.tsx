@@ -28,7 +28,9 @@ export default function About() {
     return (
         <section id='about'
             ref={sectionRef}
-            className="min-h-screen flex items-center justify-center px-6 py-20 bg-white dark:bg-transparent"
+            className="min-h-screen flex items-center justify-center px-6 py-20
+                    bg-gradient-to-b from-blue-100 to-white 
+                    dark:bg-transparent dark:from-transparent dark:to-transparent"
         >
             <div className="max-w-2xl text-center">
                 <h2 className="text-3xl font-bold mb-4 text-black dark:text-white">About Me</h2>

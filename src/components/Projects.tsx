@@ -47,7 +47,7 @@ export default function Projects() {
                     >
                         <div className="text-gray-600 dark:text-white">
                             <h3 className="text-xl font-bold text-white mb-2">{arr.title}</h3>
-                            <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                            <ul className="list-disc pl-5 space-y-1 text-black dark:text-white">
                                 {arr.description
                                     .split('•')
                                     .filter(Boolean)
