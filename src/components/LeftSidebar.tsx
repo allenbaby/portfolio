@@ -52,9 +52,9 @@ export default function LeftSidebar() {
     }, [])
 
     return (
-        <aside className="hidden md:flex fixed top-0 left-0 h-screen w-16 bg-white dark:bg-black border-r border-gray-200 dark:border-gray-800 flex-col items-center justify-between py-8 shadow-md z-50">
-            {/* Social Icons at Top */}
-            <div className="flex flex-col gap-6">
+        <aside className="flex fixed z-50 bg-white dark:bg-black border-t md:border-r border-gray-200 dark:border-gray-800 w-full h-16 bottom-0 md:top-0 md:left-0 md:w-16 md:h-screen flex-row md:flex-col items-center justify-center px-4 md:px-0 md:py-8">
+            {/* Icons */}
+            <div className="flex gap-6 flex-row md:flex-col justify-around md:justify-center items-center w-full">
                 {socials.map((social, i) => (
                     <a
                         key={social.label}
@@ -70,12 +70,12 @@ export default function LeftSidebar() {
                 ))}
             </div>
 
-            {/* Email Centered at Bottom, Vertical */}
-            <div className="flex-1 flex items-center justify-center">
+
+            {/* Email (Desktop only) */}
+            <div className="hidden md:flex flex-1 items-center justify-center">
                 <a
                     href="mailto:ababy1@toromail.csudh.edu"
-                    className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap
-                    hover:text-blue-600 dark:hover:text-blue-400 transition"
+                    className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap hover:text-blue-600 dark:hover:text-blue-400 transition"
                     style={{
                         writingMode: 'vertical-rl',
                         textOrientation: 'mixed',
@@ -86,6 +86,7 @@ export default function LeftSidebar() {
                 </a>
             </div>
         </aside>
+
     )
 }
 

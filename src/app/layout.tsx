@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className='overflow-y-scroll hide-scrollbar dark'>
+    <html lang="en" className="overflow-y-scroll hide-scrollbar dark">
       <body className={inter.className}>
         <ThemeProvider>
-          {/* Global background video */}
+          {/* Background video and overlay */}
           <video
             autoPlay
             muted
@@ -33,31 +33,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <source src="/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
-          {/* Optional: Overlay for readability */}
           <div className="fixed top-0 left-0 w-full h-full bg-black/30 z-[-1]" />
 
-          {/* Fixed top-right theme toggle */}
+          {/* Theme toggle */}
           <div className="fixed top-4 right-4 z-50">
             <ThemeToggle />
           </div>
 
-          {/* Fixed vertical left sidebar */}
-          <div className="fixed top-0 left-0 h-full w-16 z-40">
-            <LeftSidebar />
-          </div>
+          {/* Sidebar */}
+          <LeftSidebar />
 
-          {/* Scroll Progress bar on the right */}
+          {/* Scroll progress on the right */}
           <ScrollProgress />
 
-          {/* Smooth scrolling content area */}
+          {/* Main content area with responsive padding */}
           <SmoothScrollProvider>
-            <div className="pl-16">
+            <main
+              className="
+                pt-0 pb-16  /* padding bottom for mobile sidebar height */
+                md:pl-16  /* padding left for desktop sidebar width */
+                md:pb-0   /* remove bottom padding on desktop */
+                mr-8      /* right margin for scroll progress bar width */
+              "
+            >
               {children}
-            </div>
+            </main>
           </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
