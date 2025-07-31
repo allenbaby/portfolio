@@ -3,7 +3,7 @@
 This is my personal developer portfolio website, built with **Next.js 15**, **Tailwind CSS**, and **GSAP animations**. It showcases my projects, technical stack, and development experience in a sleek, performant interface that I personally love. 
 The smooth scrolling is so satisfying xD.
 
-![Screenshot](./public/preview.png)
+![Screenshot](./public/demo.gif)
 
 ---
 
