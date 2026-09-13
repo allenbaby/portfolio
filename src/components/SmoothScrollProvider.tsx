@@ -9,12 +9,15 @@ gsap.registerPlugin(ScrollSmoother);
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   useLayoutEffect(() => {
-    ScrollSmoother.create({
+    const smoother = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
       content: '#smooth-content',
-      smooth: 1.5,
+      smooth: 1.1,
+      smoothTouch: 0.1,
       effects: true,
     });
+
+    return () => smoother.kill();
   }, []);
 
   return (

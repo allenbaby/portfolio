@@ -7,15 +7,26 @@ export default function Projects() {
     const sectionRef = useRef<HTMLDivElement | null>(null)
 
     const projectsArray = [
-        { id: 1, link: 'https://grantsnow.co.uk/', title: 'GrantsNow', description: '• Engineered high-performance web applications by offloading CPU-intensive tasks toWebWorkers, improving page throughput and responsiveness by over 30%. • Engineered modular scraping pipelines in Python with multithreading and retry logic, capable of aggregating data from 50+ sites; new sources could be onboarded seamlessly by updating an Excel file with CSS selectors—no code changes required. • Integrated LLM-powered chat interface using OpenAI’s ChatGPT via Node.js middleware and Oracle Digital Assistant, streamlining user queries with intelligent, real-time responses.' },
         {
             id: 2,
             link: 'https://repogenie.vercel.app/',
-            title: 'Repo Genie (AI Codebase Generator)',
-            description: `• Built a full-stack developer tool that translates natural language prompts into production-ready codebases using Groq LLaMA 3.3-70B, reducing boilerplate setup time by 80%. • Implemented GitHub integration for one-click deployment of generated codebases to user repositories, streamlining developer workflow. • Integrated Sandpack via @codesandbox/sandpack-react to enable real-time in-browser code preview and editing, accelerating user iteration speed by 3x.`
+            github: 'https://github.com/allenbaby/repo-genie',
+            title: 'Repo Genie - AI Codebase Generator',
+            description: [<>Built an AI-assisted code generation system using <strong>Groq Qwen3.8-27B</strong> to convert natural-language prompts into structured, runnable applications.</>, <>Developed a multi-stage pipeline to parse model output into a virtual file system with dependency resolution, real-time editing, and <strong>live preview</strong> through Sandpack.</>, <>Integrated GitHub authentication and repository APIs to automatically create repositories and push complete generated codebases.</>],
         },
-        // { id: 3, link: '', title: 'LinkedIn Accelerator', description: '• Developed an application to scrape through LinkedIn and get the details of all Jobs and applicant details posted by the Company. • Reduced time-to-filter suitable candidates by over 30% for HR personnel by centralizing hiring data and eliminating manual search steps. • Enabled export of processed data to Excel and internal tools via REST API endpoints for seamless HR workflow integration.' },
-        { id: 4, link: 'https://github.com/recloudstream/cloudstream/pull/391', title: 'CloudStream', description: '• Contributed to an open-source Android streaming app on GitHub with 10,000+ monthly active users. • Implementing a modular feature to control video streaming quality based on network type (Wi-Fi vs mobile data); PR was merged and deployed to production build apk.' },
+        {
+            id: 3,
+            link: 'https://playthat.vercel.app/',
+            github: 'https://github.com/allenbaby/play-that',
+            title: 'Headspace - Social Meditation Platform',
+            description: [<>Built and deployed a full-stack application supporting authentication, guided audio content, favorites, streak tracking, social interactions, and persistent user data.</>, <>Engineered a timezone-aware streak algorithm using <strong>Luxon</strong> and transaction-safe database operations to enforce once-per-day completion and prevent duplicate writes.</>, <>Integrated <strong>Firebase Cloud Messaging</strong> for scheduled user notifications and reminder preferences.</>],
+        },
+        {
+            id: 4,
+            link: 'https://github.com/recloudstream/cloudstream/pull/391',
+            title: 'CloudStream - Open-Source Android Application',
+            description: [<>Developed a modular, network-aware video-quality control for a Kotlin Android application serving <strong>10,000+ monthly active users</strong>; the contribution passed review, was merged, and shipped to production.</>],
+        },
     ]
 
     useEffect(() => {
@@ -30,7 +41,7 @@ export default function Projects() {
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: 'top 80%',
-                        toggleActions: 'play reverse play reverse',
+                        once: true,
                     }
                 }
             )
@@ -41,9 +52,15 @@ export default function Projects() {
         <section
             id="projects"
             ref={sectionRef}
-            className="min-h-screen py-20 bg-gray-50 px-6 dark:bg-transparent"
+            className="section-shell min-h-screen px-6 py-24"
         >
-            <h2 className="text-4xl font-bold text-black dark:text-white text-center mb-12">Projects</h2>
+            <div className="mx-auto mb-12 flex max-w-6xl items-end justify-between gap-6">
+                <div>
+                    <p className="eyebrow mb-4">04 / Selected work</p>
+                    <h2 className="text-5xl font-black tracking-tight text-white sm:text-7xl">Things I&apos;ve built.</h2>
+                </div>
+                <span className="hidden pb-2 text-right text-sm text-[var(--ink-muted)] sm:block">Click a project<br />to open it ↗</span>
+            </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto dark:text-white">
                 {projectsArray.map((arr) => {
                     const hasLink = !!arr.link;
@@ -52,19 +69,21 @@ export default function Projects() {
                         <div
                             key={arr.id}
                             onClick={() => hasLink && window.open(arr.link, "_blank")}
-                            className={`rounded-xl shadow-lg p-6 transition
-        bg-white dark:bg-gray-900 dark:text-white hover:shadow-xl 
-        ${hasLink && "hover:bg-blue-50 hover:cursor-pointer dark:hover:bg-blue-900 hover:scale-[1.03]"}`}
+                            className={`glass-panel group min-h-[19rem] rounded-[1.5rem] p-7 transition hover:-translate-y-2 hover:border-[var(--acid)]/60
+                            ${hasLink && "cursor-pointer"}`}
                         >
                             <div>
-                                <h3 className="text-xl font-bold mb-2">{arr.title}</h3>
-                                <ul className="list-disc pl-5 space-y-1 text-black dark:text-white">
-                                    {arr.description
-                                        .split('•')
-                                        .filter(Boolean)
-                                        .map((point, index) => (
-                                            <li key={index}>{point.trim()}</li>
-                                        ))}
+                                <div className="mb-8 flex items-start justify-between gap-4">
+                                    <h3 className="text-2xl font-bold">{arr.title}</h3>
+                                    <div className="flex shrink-0 items-center gap-3">
+                                        {arr.github && <a href={arr.github} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} className="text-xs font-bold text-[var(--ink-muted)] hover:text-[var(--acid)]">GitHub</a>}
+                                        <span className="text-xl text-[var(--acid)] transition group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                                    </div>
+                                </div>
+                                <ul className="space-y-3 text-sm leading-6 text-[var(--ink-muted)]">
+                                    {arr.description.map((point, index) => (
+                                        <li key={index}>{point}</li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>

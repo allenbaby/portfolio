@@ -27,7 +27,7 @@ const socials = [
   },
   {
     label: "Resume",
-    href: "https://drive.google.com/file/d/1GeezdB0bzzJ4ladhxLqHBTOlYCmHzoV-/view?usp=sharing",
+    href: "https://drive.google.com/file/d/187ufdt48Gq9gSaM6MWBBQeb_3VL2B_kV/view?usp=sharing",
     icon: <FaDownload />,
   },
 ];
@@ -56,9 +56,9 @@ export default function LeftSidebar() {
   }, []);
 
   return (
-    <aside className="flex fixed z-50 bg-white dark:bg-black border-t md:border-r border-gray-200 dark:border-gray-800 w-full h-16 bottom-0 md:top-0 md:left-0 md:w-16 md:h-screen flex-row md:flex-col items-center justify-center px-4 md:px-0 md:py-8">
+    <aside className="fixed bottom-0 left-0 z-50 flex h-[4.5rem] w-full flex-row items-center justify-center border-t border-white/10 bg-[#070812]/90 px-2 backdrop-blur-xl md:left-0 md:top-0 md:h-screen md:w-16 md:flex-col md:border-r md:border-t-0 md:bg-black/70 md:px-0 md:py-8">
       {/* Icons */}
-      <div className="flex gap-6 flex-row md:flex-col justify-around md:justify-center items-center w-full">
+      <div className="flex w-full max-w-sm flex-row items-center justify-evenly md:flex-col md:justify-center md:gap-6">
         {socials.map((social, i) => (
           <a
             key={social.label}
@@ -67,12 +67,7 @@ export default function LeftSidebar() {
             rel="noopener noreferrer"
             aria-label={social.label}
             ref={(el) => setRef(el, i)}
-            className="
-            group relative
-            text-gray-600 dark:text-gray-300
-            hover:text-blue-600 dark:hover:text-blue-400
-            transition text-2xl
-        "
+            className="group relative flex h-12 w-12 items-center justify-center text-2xl text-gray-300 transition hover:-translate-y-1 hover:text-[var(--acid)]"
           >
             {social.icon}
 

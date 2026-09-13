@@ -28,15 +28,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             muted
             loop
             playsInline
-            className="fixed top-0 left-0 w-full h-full object-cover z-[-1] opacity-60"
+            className="fixed top-0 left-0 w-full h-full object-cover z-[-1] opacity-20 mix-blend-screen"
           >
             <source src="/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="fixed top-0 left-0 w-full h-full bg-black/30 z-[-1]" />
+          <div className="fixed top-0 left-0 z-[-1] h-full w-full bg-white/45 dark:bg-[#070812]/75" />
+          <div className="blueprint-field" aria-hidden="true">
+            <span className="blueprint-corner blueprint-corner-one" />
+            <span className="blueprint-corner blueprint-corner-two" />
+            <span className="blueprint-rule" />
+          </div>
 
           {/* Theme toggle */}
-          <div className="fixed top-1 right-1" style={{ zIndex: 9999 }}>
+          <div className="fixed right-3 top-3 md:right-14 md:top-4" style={{ zIndex: 9999 }}>
             <ThemeToggle />
           </div>
 

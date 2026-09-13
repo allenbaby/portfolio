@@ -19,7 +19,13 @@ export default function ScrollProgress() {
             const progress = (scrollTop / scrollHeight) * 100;
 
             if (progressRef.current) {
-                progressRef.current.style.height = `${progress}%`;
+                if (window.matchMedia('(max-width: 767px)').matches) {
+                    progressRef.current.style.width = `${progress}%`;
+                    progressRef.current.style.height = '100%';
+                } else {
+                    progressRef.current.style.height = `${progress}%`;
+                    progressRef.current.style.width = '100%';
+                }
             }
 
             requestAnimationFrame(updateProgress);
@@ -29,13 +35,11 @@ export default function ScrollProgress() {
     }, []);
 
     return (
-        <div className="fixed right-4 top-1/2 -translate-y-1/2 h-[20vh] w-2 
-        dark:bg-white/10 bg-black/10
-        rounded-full z-[9999] overflow-hidden pointer-events-none">
+        <div className="fixed bottom-[4.5rem] left-0 z-[9999] h-1 w-full overflow-hidden rounded-full bg-black/10 pointer-events-none dark:bg-white/10 md:bottom-auto md:left-auto md:right-4 md:top-1/2 md:h-[20vh] md:w-2 md:-translate-y-1/2">
             <div
                 ref={progressRef}
-                className="bg-blue-500 w-full transition-all duration-75"
-                style={{ height: '0%' }}
+                className="h-full w-0 bg-[var(--acid)] transition-all duration-75 md:h-0 md:w-full"
+                style={{ width: '0%', height: '0%' }}
             />
         </div>
     );

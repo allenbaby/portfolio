@@ -18,7 +18,7 @@ export default function About() {
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: 'top 80%',
-                        toggleActions: 'play reverse play reverse',
+                        once: true,
                     }
                 }
             )
@@ -28,18 +28,22 @@ export default function About() {
     return (
         <section id='about'
             ref={sectionRef}
-            className="min-h-screen flex items-center justify-center px-6 py-20
-                    bg-gradient-to-b from-blue-100 to-white 
-                    dark:bg-transparent dark:from-transparent dark:to-transparent"
+            className="section-shell min-h-screen flex items-center justify-center px-6 py-24"
         >
-            <div className="max-w-2xl text-center">
-                <h2 className="text-3xl font-bold mb-4 text-black dark:text-white">About Me</h2>
-                <p className="text-lg text-gray-600 dark:text-white">
-                    I’m a Software Engineer with 3+ years of Industry experience building scalable web applications and AI-driven interfaces.
-                    Expertise in JavaScript, React.js, Node.js, Next.js, Python, and cloud-based solutions. Proven track record of
-                    reducing load times and improving deployment pipelines. Seeking SDE roles in agile environments focused on
-                    performance and innovation.
+            <div className="glass-panel max-w-4xl rounded-[2rem] p-8 text-left sm:p-14">
+                <p className="eyebrow mb-5">01 / The short version</p>
+                <h2 className="mb-7 text-4xl font-black tracking-tight text-white sm:text-6xl">Engineering with a point of view.</h2>
+                <p className="max-w-2xl text-lg leading-8 text-[var(--ink-muted)] sm:text-xl">
+                    I’m a Software Engineer with 4+ years of industry experience building scalable web applications and AI-driven interfaces.
+                    I specialize in secure authentication and authorization, including JWT-based auth and role-based access control.
+                    I also build and maintain cloud CI/CD deployments, with a focus on reliable releases, performance, and developer experience.
+                    My toolkit includes JavaScript, React.js, Node.js, Next.js, Python, and cloud-based solutions.
                 </p>
+                <div className="mt-10 flex flex-wrap gap-3 text-sm font-semibold text-white/80">
+                    <span className="rounded-full border border-white/15 px-4 py-2">4+ years shipping</span>
+                    <span className="rounded-full border border-white/15 px-4 py-2">JWT + RBAC</span>
+                    <span className="rounded-full border border-white/15 px-4 py-2">Cloud CI/CD</span>
+                </div>
             </div>
         </section>
     )

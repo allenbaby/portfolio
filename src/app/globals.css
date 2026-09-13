@@ -5,8 +5,23 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #070812;
+  --foreground: #f5f7ff;
+  --ink-muted: #a6abc2;
+  --acid: #d6ff4b;
+  --acid-button: #d6ff4b;
+  --coral: #ff6b5f;
+  --violet: #7a5cff;
+}
+
+html:not(.dark) {
+  --background: #f3f5ff;
+  --foreground: #111321;
+  --ink-muted: #596078;
+  --acid: #5e7800;
+  --acid-button: #bdf34b;
+  --coral: #dd5d62;
+  --violet: #6658d8;
 }
 
 .hide-scrollbar {
@@ -28,5 +43,303 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, ui-sans-serif, sans-serif;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 70% 0%, rgba(122, 92, 255, 0.18), transparent 32rem),
+    radial-gradient(circle at 10% 35%, rgba(255, 107, 95, 0.1), transparent 28rem);
+  background-size: 4rem 4rem, 4rem 4rem, auto, auto;
+}
+
+::selection {
+  color: #070812;
+  background: var(--acid);
+}
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(1.5rem, -2rem, 0) scale(1.08); }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(214, 255, 75, 0.18); }
+  50% { box-shadow: 0 0 0 1.25rem rgba(214, 255, 75, 0); }
+}
+
+@keyframes intro-swap {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.blueprint-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.72;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 5rem 5rem;
+}
+
+.blueprint-corner {
+  position: absolute;
+  display: block;
+  height: 13rem;
+  width: 13rem;
+  border: 1px solid rgba(214, 255, 75, 0.2);
+}
+
+.blueprint-corner::before,
+.blueprint-corner::after {
+  position: absolute;
+  content: '';
+  background: currentColor;
+}
+
+.blueprint-corner::before {
+  top: -1px;
+  left: -1px;
+  height: 1px;
+  width: 2rem;
+}
+
+.blueprint-corner::after {
+  top: -1px;
+  left: -1px;
+  height: 2rem;
+  width: 1px;
+}
+
+.blueprint-corner-one {
+  top: 14%;
+  left: 8%;
+  color: var(--acid);
+  transform: rotate(14deg);
+}
+
+.blueprint-corner-two {
+  right: 8%;
+  bottom: 12%;
+  color: var(--coral);
+  transform: rotate(-18deg);
+}
+
+.blueprint-rule {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+
+  background: linear-gradient(90deg, transparent, var(--acid), transparent);
+  animation: blueprint-scan 12s linear infinite;
+}
+
+@keyframes blueprint-scan {
+  from { transform: translateY(-5vh); opacity: 0; }
+  15%, 85% { opacity: 0.45; }
+  to { transform: translateY(105vh); opacity: 0; }
+}
+
+.hero-headline {
+  position: relative;
+  height: 4.4em;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .hero-headline {
+    height: 3.4em;
+  }
+}
+
+.hero-headline .hero-gradient {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-headline-long {
+  font-size: 0.78em;
+}
+
+.eyebrow {
+  color: var(--acid);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.section-shell {
+  position: relative;
+  isolation: isolate;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(1.25rem);
+}
+
+.experience-card,
+.skill-card {
+  overflow: hidden;
+}
+
+.experience-card:hover,
+.skill-card:hover {
+  border-color: rgba(214, 255, 75, 0.65);
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(214, 255, 75, 0.12);
+}
+
+.skill-card:hover {
+  z-index: 2;
+  color: #10150a !important;
+  background: linear-gradient(135deg, #e5ff82 0%, #789d13 42%, #f0ffad 63%, #5f7f0c 100%);
+  border-color: #eaff9a;
+  transform: translateY(-0.35rem) scale(1.04);
+  box-shadow: 0 1.25rem 2.75rem rgba(78, 105, 8, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+html:not(.dark) body {
+  background-image:
+    linear-gradient(rgba(17, 19, 33, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 19, 33, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 78% 4%, rgba(102, 88, 216, 0.22), transparent 28rem),
+    radial-gradient(circle at 4% 42%, rgba(221, 93, 98, 0.16), transparent 25rem),
+    radial-gradient(circle at 70% 86%, rgba(189, 243, 75, 0.2), transparent 30rem);
+  background-color: var(--background);
+}
+
+html:not(.dark) video {
+  opacity: 0.04;
+  mix-blend-mode: normal;
+}
+
+html:not(.dark) .blueprint-field {
+  opacity: 0.52;
+  mix-blend-mode: multiply;
+}
+
+html:not(.dark) .hero-gradient {
+  background-image: linear-gradient(90deg, var(--acid), #111321 48%, var(--coral));
+}
+
+html:not(.dark) .glass-panel {
+  position: relative;
+  border-color: rgba(102, 88, 216, 0.24);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(221, 93, 98, 0.16), transparent 30%),
+    radial-gradient(circle at 0% 100%, rgba(189, 243, 75, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(231, 235, 255, 0.82));
+  box-shadow: 0 1.5rem 5rem rgba(72, 77, 140, 0.18), 0 0 0 1px rgba(221, 93, 98, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+html:not(.dark) .glass-panel::before {
+  position: absolute;
+  top: 0;
+  right: 12%;
+  height: 2px;
+  width: 35%;
+  content: '';
+  background: linear-gradient(90deg, transparent, var(--coral), var(--violet), transparent);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+html:not(.dark) .experience-card,
+html:not(.dark) .skill-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(235, 237, 255, 0.78)),
+    linear-gradient(110deg, rgba(189, 243, 75, 0.12), rgba(221, 93, 98, 0.08));
+  border-color: rgba(102, 88, 216, 0.3);
+}
+
+html:not(.dark) .experience-card:hover,
+html:not(.dark) .skill-card:hover {
+  border-color: rgba(102, 88, 216, 0.7);
+  box-shadow: 0 1rem 2.5rem rgba(72, 77, 140, 0.2), 0 0 0 1px rgba(102, 88, 216, 0.12);
+}
+
+html:not(.dark) .skill-card:hover {
+  color: #10150a !important;
+  background: linear-gradient(135deg, #e5ff82 0%, #789d13 42%, #f0ffad 63%, #5f7f0c 100%);
+  border-color: #789d13;
+  box-shadow: 0 1.25rem 2.75rem rgba(78, 105, 8, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+html:not(.dark) .section-shell {
+  border-color: rgba(17, 19, 33, 0.1);
+}
+
+html:not(.dark) aside {
+  border-color: rgba(17, 19, 33, 0.12);
+  background: rgba(246, 247, 239, 0.88);
+}
+
+html:not(.dark) aside a {
+  color: #42475a;
+}
+
+html:not(.dark) aside a:hover {
+  color: #587500;
+}
+
+html:not(.dark) section h1,
+html:not(.dark) section h2,
+html:not(.dark) section h3,
+html:not(.dark) section p.text-white,
+html:not(.dark) section span.text-white,
+html:not(.dark) section a.text-white {
+  color: var(--foreground);
+}
+
+html:not(.dark) section .text-white\/40 {
+  color: rgba(17, 19, 33, 0.45);
+}
+
+html:not(.dark) section .text-white\/80 {
+  color: rgba(17, 19, 33, 0.78);
+}
+
+html:not(.dark) section .border-white\/20,
+html:not(.dark) section .border-white\/15 {
+  border-color: rgba(17, 19, 33, 0.2);
+}
+
+html:not(.dark) section .bg-white\/5 {
+  background: rgba(17, 19, 33, 0.04);
+}
+
+html:not(.dark) section .text-\[var\(--ink-muted\)\] {
+  color: var(--ink-muted);
+}
+
+html:not(.dark) .glass-panel .text-white {
+  color: var(--foreground) !important;
+}
+
+html:not(.dark) .glass-panel.text-white {
+  color: var(--foreground) !important;
+}
+
+html:not(.dark) input,
+html:not(.dark) textarea {
+  color: var(--foreground);
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: rgba(17, 19, 33, 0.48);
 }
