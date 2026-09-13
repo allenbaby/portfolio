@@ -167,7 +167,7 @@ body {
 }
 
 .hero-headline-long {
-  font-size: 0.78em;
+  font-size: clamp(2.75rem, 10vw, 8rem);
 }
 
 .eyebrow {
