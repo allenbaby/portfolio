@@ -76,7 +76,7 @@ export default function Hero() {
             <div className="glow-orb absolute -right-24 top-24 h-72 w-72 rounded-full bg-[var(--violet)]/30" />
             <div className="glow-orb absolute -left-32 bottom-12 h-80 w-80 rounded-full bg-[var(--coral)]/20" style={{ animationDelay: '-3s' }} />
             <div className="relative z-10 w-full max-w-[96rem]">
-                <p className="eyebrow mb-6">Software engineer / creative technologist</p>
+                <p className="eyebrow mb-6">Software engineer / full-stack builder</p>
                 <h1 key={headlineQuotes[headlineIndex]} aria-live="polite" className={`hero-headline intro-swap mb-7 w-full px-2 text-6xl font-black leading-[0.9] tracking-[-0.06em] text-white sm:text-8xl lg:text-[9rem] ${headlineQuotes[headlineIndex].length > 24 ? 'hero-headline-long' : ''}`}>
                     <span className="hero-gradient block bg-gradient-to-r from-[var(--acid)] via-white to-[var(--coral)] bg-clip-text text-transparent">{headlineQuotes[headlineIndex]}</span>
                 </h1>

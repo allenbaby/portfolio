@@ -10,10 +10,10 @@ import LeftSidebar from '@/components/LeftSidebar';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Allen Baby Portfolio',
-  description: 'GSAP + Tailwind + Dark Mode Portfolio',
+  title: 'Allen Baby | Software Engineer',
+  description: 'Portfolio of Allen Baby, a software engineer building secure, scalable, cloud-ready web experiences.',
   icons: {
-    icon: "/portfolio.png",
+    icon: "/favicon.svg",
   },
 }
 
