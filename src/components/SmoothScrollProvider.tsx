@@ -9,12 +9,13 @@ gsap.registerPlugin(ScrollSmoother);
 
 export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   useLayoutEffect(() => {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
     const smoother = ScrollSmoother.create({
       wrapper: '#smooth-wrapper',
       content: '#smooth-content',
-      smooth: 1.1,
-      smoothTouch: 0.1,
-      effects: true,
+      smooth: isTouchDevice ? 0.4 : 1.1,
+      smoothTouch: 0,
+      effects: !isTouchDevice,
     });
 
     return () => smoother.kill();

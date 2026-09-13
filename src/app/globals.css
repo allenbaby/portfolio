@@ -140,6 +140,16 @@ body {
   animation: blueprint-scan 12s linear infinite;
 }
 
+@media (max-width: 767px) {
+  video {
+    display: none;
+  }
+
+  .blueprint-rule {
+    animation-duration: 20s;
+  }
+}
+
 @keyframes blueprint-scan {
   from { transform: translateY(-5vh); opacity: 0; }
   15%, 85% { opacity: 0.45; }

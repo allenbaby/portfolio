@@ -10,9 +10,12 @@ export default function ScrollProgress() {
         const smoother = ScrollSmoother.get();
         if (!smoother) return;
 
+        if (window.matchMedia('(pointer: coarse)').matches) return;
+
         const contentElement = document.getElementById('smooth-content');
         if (!contentElement) return;
 
+        let frameId = 0;
         const updateProgress = () => {
             const scrollTop = smoother.scrollTop();
             const scrollHeight = contentElement.scrollHeight - window.innerHeight;
@@ -28,10 +31,11 @@ export default function ScrollProgress() {
                 }
             }
 
-            requestAnimationFrame(updateProgress);
+            frameId = requestAnimationFrame(updateProgress);
         };
 
-        requestAnimationFrame(updateProgress);
+        frameId = requestAnimationFrame(updateProgress);
+        return () => cancelAnimationFrame(frameId);
     }, []);
 
     return (
