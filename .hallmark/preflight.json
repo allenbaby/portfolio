@@ -1,0 +1,33 @@
+{
+  "route": "/",
+  "clean_tree": true,
+  "signals": {
+    "framework": "Next.js 15 / React 19",
+    "fonts": "Inter, framework default",
+    "palette": "neon acid/violet/coral, no locked brand",
+    "design_md": false
+  },
+  "preserve": [
+    "all factual content",
+    "project and social links",
+    "contact EmailJS handler",
+    "theme switch",
+    "section ids",
+    "component files"
+  ],
+  "introduce": [
+    "Terminal theme by user request",
+    "Martian Mono",
+    "phosphor glyph wordmark",
+    "two dark brightness settings",
+    "project index",
+    "native scrolling",
+    "responsive layout"
+  ],
+  "citations": [
+    "package.json:1",
+    "src/app/layout.tsx:3",
+    "src/app/globals.css:5",
+    "src/components/Projects.tsx:9"
+  ]
+}

@@ -1,0 +1,49 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Letter",
+  "theme": "terminal",
+  "axes": [
+   "dark",
+   "mono",
+   "chromatic-green"
+  ],
+  "hero": "Stage",
+  "nav": "edge-aligned",
+  "footer": "letter close",
+  "imagery": "glyph wordmark from Allen Baby text",
+  "photos": [],
+  "entry": "src/app/page.tsx",
+  "fingerprint": [
+   "split hero",
+   "project index",
+   "dark monospace",
+   "native details",
+   "text toolkit",
+   "contact form"
+  ],
+  "sections": [
+   "hero",
+   "project index",
+   "about",
+   "experience rows",
+   "toolkit reference",
+   "education records",
+   "contact"
+  ],
+  "signature": "ab monogram rendered in glyphs from allenbabysoftwareengineer",
+  "waived": [
+   "77"
+  ],
+  "prompt": "Use Terminal theme for Allen Baby portfolio; preserve real content and functionality",
+  "sweep": {
+   "floor": 0,
+   "open_reflex": 0,
+   "waived": 1,
+   "review": "in-thread"
+  },
+  "date": "2026-11-13"
+ }
+]

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "mode": "in-thread",
+    "verdict": "fix",
+    "findings": [
+      "text and glyph portrait too far apart"
+    ],
+    "fixes": [
+      "5:6 column ratio with 40px gap"
+    ],
+    "status": "resolved, confirming captures pass"
+  },
+  "finish": {
+    "mode": "in-thread",
+    "verdict": "ship",
+    "theme_gap": "none",
+    "before_advantage": "Detailed project and experience notes were visible immediately; all remain in native disclosures.",
+    "warnings": {
+      "kept": "All source facts verified by browser test with disclosures open; visible word count intentionally smaller.",
+      "77": "Two real Education records retained; waived rather than adding filler."
+    },
+    "material": "No stock images or empty image slots. Optional future material: a portrait to convert into glyphs."
+  },
+  "copy_changes": {
+    "bugs judged. zero harmed.": "Allen Baby.",
+    "engineering with a point of view.": "About",
+    "systems that hold up under pressure.": "Experience",
+    "my stack.": "Toolkit",
+    "frontend.": "Frontend",
+    "backend.": "Backend",
+    "database.": "Database",
+    "tools.": "Tools",
+    "things i've built.": "Selected work",
+    "repo genie - ai codebase generator": "Repo Genie",
+    "headspace - social meditation platform": "Headspace",
+    "cloudstream - open-source android application": "CloudStream",
+    "still learning.": "Education"
+  },
+  "theme": "Terminal (by request)",
+  "verification": {
+    "floor_failures": 0,
+    "open_reflex": 0,
+    "waived": [
+      "77, two supplied Education records"
+    ],
+    "warnings_checked": [
+      "metrics retained in expandable notes",
+      "fewer initially visible words is intentional"
+    ],
+    "original_destinations": "all preserved",
+    "form_fields": "3/3 preserved",
+    "viewport_widths": [
+      320,
+      375,
+      768,
+      1280,
+      1440,
+      1920
+    ],
+    "javascript_disabled": "content and glyph fallback visible",
+    "console_errors": 0,
+    "contact_delivery": "not exercised; network requests blocked in interaction checks"
+  }
+}

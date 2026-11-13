@@ -1,11 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { gsap } from '@/utils/gsap'
-
 export default function Projects() {
-    const sectionRef = useRef<HTMLDivElement | null>(null)
-
     const projectsArray = [
         {
             id: 2,
@@ -29,66 +24,33 @@ export default function Projects() {
         },
     ]
 
-    useEffect(() => {
-        if (sectionRef.current) {
-            gsap.fromTo(
-                sectionRef.current,
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: 'top 80%',
-                        once: true,
-                    }
-                }
-            )
-        }
-    }, [])
-
+    const summaries = [
+        'Natural-language prompts to runnable applications, with live editing and GitHub publishing.',
+        'Guided audio, social features, and timezone-aware meditation streaks.',
+        'A network-aware video-quality control, merged and shipped to 10,000+ monthly users.',
+    ]
     return (
-        <section
-            id="projects"
-            ref={sectionRef}
-            className="section-shell min-h-screen px-6 py-24"
-        >
-            <div className="mx-auto mb-12 flex max-w-6xl items-end justify-between gap-6">
-                <div>
-                    <p className="eyebrow mb-4">04 / Selected work</p>
-                    <h2 className="text-5xl font-black tracking-tight text-white sm:text-7xl">Things I&apos;ve built.</h2>
-                </div>
-                <span className="hidden pb-2 text-right text-sm text-[var(--ink-muted)] sm:block">Click a project<br />to open it ↗</span>
-            </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto dark:text-white">
-                {projectsArray.map((arr) => {
-                    const hasLink = !!arr.link;
-
-                    return (
-                        <div
-                            key={arr.id}
-                            onClick={() => hasLink && window.open(arr.link, "_blank")}
-                            className={`glass-panel group min-h-[19rem] rounded-[1.5rem] p-7 transition hover:-translate-y-2 hover:border-[var(--acid)]/60
-                            ${hasLink && "cursor-pointer"}`}
-                        >
-                            <div>
-                                <div className="mb-8 flex items-start justify-between gap-4">
-                                    <h3 className="text-2xl font-bold">{arr.title}</h3>
-                                    <div className="flex shrink-0 items-center gap-3">
-                                        {arr.github && <a href={arr.github} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()} className="text-xs font-bold text-[var(--ink-muted)] hover:text-[var(--acid)]">GitHub</a>}
-                                        <span className="text-xl text-[var(--acid)] transition group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-                                    </div>
-                                </div>
-                                <ul className="space-y-3 text-sm leading-6 text-[var(--ink-muted)]">
-                                    {arr.description.map((point, index) => (
-                                        <li key={index}>{point}</li>
-                                    ))}
-                                </ul>
+        <section id="projects" className="section projects-section">
+            <div className="container">
+                <div className="section-heading"><h2>Projects</h2><p>Web applications & open source</p></div>
+                <div className="project-index">
+                    {projectsArray.map((arr, index) => (
+                        <article key={arr.id} className="project-row">
+                            <div className="project-title">
+                                <h3><a href={arr.link} target="_blank" rel="noreferrer">{arr.title.split(' - ')[0]}</a></h3>
+                                <p>{arr.title.split(' - ')[1]}</p>
                             </div>
-                        </div>
-                    );
-                })}
+                            <div className="project-description">
+                                <p>{summaries[index]}</p>
+                                <details className="notes"><summary>Engineering notes</summary><ul>{arr.description.map((point, i) => <li key={i}>{point}</li>)}</ul></details>
+                            </div>
+                            <div className="project-links">
+                                <a href={arr.link} target="_blank" rel="noreferrer">{arr.github ? 'Visit project' : 'View contribution'}</a>
+                                {arr.github && <a href={arr.github} target="_blank" rel="noreferrer" onClick={(event) => event.stopPropagation()}>GitHub</a>}
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     )

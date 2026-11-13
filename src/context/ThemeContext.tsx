@@ -14,9 +14,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>('light')
 
   useEffect(() => {
-    const stored = localStorage.getItem('theme') as Theme | null
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const initial = stored ?? (prefersDark ? 'dark' : 'light')
+    let initial: Theme = 'light'
+    try {
+      const stored = localStorage.getItem('theme')
+      if (stored === 'dark' || stored === 'light') initial = stored
+    } catch { /* The default remains usable when storage is unavailable. */ }
     setTheme(initial)
     document.documentElement.classList.toggle('dark', initial === 'dark')
   }, [])
@@ -24,7 +26,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
+    try { localStorage.setItem('theme', newTheme) } catch { /* Theme still works without persistence. */ }
     document.documentElement.classList.toggle('dark', newTheme === 'dark')
   }
 
