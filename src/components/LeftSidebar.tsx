@@ -4,7 +4,7 @@ const socials = [
   { label: 'GitHub', href: 'https://github.com/allenbaby' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/allenbaby' },
   { label: 'Email', href: 'mailto:allen.baby10@gmail.com' },
-  { label: 'Resume', href: 'https://drive.google.com/file/d/187ufdt48Gq9gSaM6MWBBQeb_3VL2B_kV/view?usp=sharing' },
+  { label: 'Resume', href: 'https://drive.google.com/file/d/1MlbhgNJ3xOWyKbX4SY0AQ4oDbdM0IKwc/view?usp=sharing' },
 ]
 
 export default function LeftSidebar() {

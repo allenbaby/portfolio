@@ -272,3 +272,6 @@ a { color: var(--color-ink-2); text-decoration-style: dotted; }
   .section-heading h2, .about-heading h2, .stack-layout h2 { font-size: 1.75rem; }
 }
 @media (prefers-reduced-motion: reduce) { .glyph-portrait { pointer-events: none; } }
+
+.notes ul { list-style-type: '+ '; }
+.notes li::marker { color: var(--color-accent); font-weight: 500; }
